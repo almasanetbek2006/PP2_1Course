@@ -1,0 +1,20 @@
+import os
+
+def checking(a):
+    # Check existence
+    if os.path.exists(a):
+        print(f"the path '{a}' exists")
+    else:
+        print(f"the path '{a}' does not exist")
+        return  
+    
+    if os.path.isfile(a):
+        name = os.path.basename(a)
+        dir = os.path.dirname(a)
+        print(f"this path is real. The file.\nname of file: {name}\nPath to directory: {dir}")
+    if os.path.isdir(a):
+        print(f"this path is real. this is directory")
+
+
+a = input("enter the path to check: ")
+checking(a)
